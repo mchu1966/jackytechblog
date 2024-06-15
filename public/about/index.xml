@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on Jacky&#39;s Tech</title>
+    <link>http://jackytech.github.io/about/</link>
+    <description>Recent content in Abouts on Jacky&#39;s Tech</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://jackytech.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://jackytech.github.io/about/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://jackytech.github.io/about/about/</guid>
+      <description> Hello Link to heading </description>
+    </item>
+  </channel>
+</rss>
