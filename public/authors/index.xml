@@ -2,10 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on Jacky&#39;s Tech</title>
-    <link>http://jackytech.github.io/authors/</link>
+    <link>http://localhost:1313/authors/</link>
     <description>Recent content in Authors on Jacky&#39;s Tech</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://jackytech.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Jun 2024 03:00:54 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jacky Cheng</title>
+      <link>http://localhost:1313/authors/jacky-cheng/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/authors/jacky-cheng/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

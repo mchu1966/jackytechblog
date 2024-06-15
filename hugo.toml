@@ -12,6 +12,9 @@ disqusShortname = "JackyCheng"
 
 [markup.highlight]
 style = "github-dark"
+lineNos = true
+lineNumbersInTable = true
+anchorLineNos = true
 
 [params]
   author = "Jacky Cheng"
@@ -44,20 +47,20 @@ style = "github-dark"
 
 # Social links
 [[params.social]]
+  name = "LinkedIn"
+  icon = "fa-brands fa-linkedin fa-2x"
+  weight = 1
+  url = "https://www.linkedin.com/in/jacky-mcc"
+[[params.social]]
   name = "Github"
   icon = "fa-brands fa-github fa-2x"
-  weight = 1
-  url = "https://github.com/johndoe/"
-[[params.social]]
-  name = "Gitlab"
-  icon = "fa-brands fa-gitlab fa-2x"
   weight = 2
-  url = "https://gitlab.com/johndoe/"
+  url = "https://github.com/mchu1966"
 [[params.social]]
-  name = "Twitter"
-  icon = "fa-brands fa-x-twitter fa-2x"
+  name = "Email"
+  icon = "fa-brands fa-at fa-2x"
   weight = 3
-  url = "https://twitter.com/johndoe/"
+  url = "mailto:mchu1966718@gmail.com"
 
 # Menu links
 [[menu.main]]
