@@ -16,13 +16,17 @@ lineNos = true
 lineNumbersInTable = true
 anchorLineNos = true
 
+[markup.tableOfContents]
+  endLevel = 4
+  ordered = false
+  startLevel = 2
+
 [params]
   author = "Jacky Cheng"
   info = "Software Engineer"
   description = "Jacky Cheng's personal blog"
   keywords = "blog,developer,personal,golang,backend"
-  avatarurl = "images/avatar.jpg"
-  gravatar = "mchu1966718@gmail.com"
+  avatarurl = "images/IMG_8387.jpeg"
 
   faviconSVG = "/img/favicon.svg"
   favicon_32 = "/img/favicon-32x32.png"
@@ -34,10 +38,14 @@ anchorLineNos = true
 
   colorScheme = "auto"
   hidecolorschemetoggle = false
+  maxSeeAlsoItems = 5
 
   # customCSS = ["css/custom.css"]
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/custom.js"]
+
+[params.goatCounter]
+  code = "9611hcmu"
 
 [taxonomies]
   category = "categories"
@@ -64,10 +72,30 @@ anchorLineNos = true
 
 # Menu links
 [[menu.main]]
-  name = "Blog"
+  name = "About"
   weight = 1
+  url = "about/"
+[[menu.main]]
+  name = "Posts"
+  weight = 2
   url  = "posts/"
 [[menu.main]]
-  name = "About"
-  weight = 2
-  url = "about/"
+  name = "Category"
+  weight = 3
+  url = "categories/"
+[[menu.main]]
+  name = "Series"
+  weight = 4
+  url = "series/"
+[[menu.main]]
+  name = "Tag"
+  weight = 5
+  url = "tags/"
+[[menus.footer]]
+  name = 'Terms'
+  pageRef = '/terms'
+  weight = 10
+[[menus.footer]]
+  name = 'Privacy'
+  pageRef = '/privacy'
+  weight = 20

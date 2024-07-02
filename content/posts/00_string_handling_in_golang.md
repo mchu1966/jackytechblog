@@ -1,19 +1,20 @@
 +++ 
 draft = false 
 date = 2024-06-16T03:00:54+08:00 
-title = 'String handling in Golang'
-description = "" 
-slug = "" 
+title = 'Golang處理String筆記'
+description = "Hello, World!" 
+slug = "string-handling-in-golang"
 authors = ["Jacky Cheng"] 
-tags = ["Golang", "string"] 
+tags = ["Golang", "String"] 
 categories = ["Note"] 
 externalLink = "" 
-series = [] 
+series = []
+havetoc = true
 +++
 
 String Handling 在編程中非常常見。本文記錄了使用 Golang 處理 String 的常見方法。
 
-# Golang 的 String 是什麼
+## Golang 的 String 是什麼
 
 > string is the set of all strings of 8-bit bytes, conventionally but not necessarily representing UTF-8-encoded text. A string may be empty, but not nil. Values of string type are immutable.
 
@@ -36,9 +37,9 @@ type stringStructDWARF struct {
 }
 ```
 
-# String Handling
+## String Handling
 
-## `nil`
+### `nil`
 
 Golang 有自己一套對 null (空值) 的處理。對於 String type 而言，是沒有 nil 的，只有預設值`""`(empty string)。
 
@@ -66,7 +67,7 @@ fmt.Println(strp == nil) // false
 fmt.Println(*strp) //
 ```
 
-## `len()`
+### `len()`
 
 因為 string 是一串 bytes，即 byte slice。可以通過 built-in function `len()` 找出 string 的長度。
 
@@ -75,7 +76,7 @@ var str = "Hello\n"
 fmt.Println(len(str)) // 6
 ```
 
-## String Literals
+### String Literals
 
 跨行的 string 有兩種表達方式，分別是使用`""`跟` `` `：
 
@@ -91,9 +92,9 @@ var str = `Hello1
 4!`
 ```
 
-## String concatenation
+### String concatenation
 
-### operator `+`
+#### operator `+`
 
 也稱作 concatenation operator
 
@@ -102,7 +103,7 @@ s := "Hello" + "World!"
 fmt.Println(s) // HelloWorld!
 ```
 
-### `fmt.Sprint`, `fmt.Sprintln`, `fmt.Sprintf`
+#### `fmt.Sprint`, `fmt.Sprintln`, `fmt.Sprintf`
 
 [fmt.Sprintf](https://pkg.go.dev/fmt#Sprintf)
 
@@ -123,7 +124,7 @@ str := fmt.Sprint(sli)
 fmt.Println(str) // [1 2 3]
 ```
 
-### `strings.Join()`
+#### `strings.Join()`
 
 [strings.Join](https://pkg.go.dev/strings#Join) 背後是使用 strings.builder [實現](https://github.com/golang/go/blob/master/src/strings/strings.go#L452-L458)
 
@@ -133,7 +134,7 @@ s := strings.Join(ss, "")
 fmt.Println(s) // HelloWorld~
 ```
 
-### `bytes.Buffer`
+#### `bytes.Buffer`
 
 [bytes.Buffer](https://pkg.go.dev/bytes#Buffer)
 
@@ -144,7 +145,7 @@ b.WriteString("World!")
 fmt.Println(b.String()) // HelloWorld!
 ```
 
-### 注意事項
+#### 注意事項
 
 每個方法的效能比較: [Go String Concat Performance](https://thefortunedays.com/articles/golang-string-concatenation-performance/)，作者給出的其中一個結論是
 
@@ -163,7 +164,7 @@ type Builder struct {
 
 Buffer 的 `WriteXxx` method 使用 [`append`](https://go.dev/ref/spec#Appending_and_copying_slices) 對 `b.buf` 進行操作，減少 memory allocation，提升效能。不過由於對同一個 memory location (slice) 進行操作，[重複使用同一個 Buffer](https://blog.wu-boy.com/2022/06/reuse-the-bytes-buffer-in-go/) 需要注意覆寫的問題。
 
-## String convertion
+### String convertion
 
 使用[strconv](https://pkg.go.dev/strconv) package
 
@@ -186,9 +187,9 @@ str := strings.Trim(strings.Replace(fmt.Sprint(a), " ", ",", -1), "[]")
 fmt.Print(str) // 1,2,3,4
 ```
 
-## 特殊情況
+### 特殊情況
 
-### Remove the last character from a string
+#### Remove the last character from a string
 
 ```go
 ss := []string{"Hello", "World", "Peter", "Tom"}
@@ -210,7 +211,7 @@ b.Truncate(b.Len() - len("rld!"))
 fmt.Println(b.String()) // HelloWo
 ```
 
-### Create a random string
+#### Create a random string
 
 ```go
 letterRunes := []rune("3456789ABCEFGHJKLMNPQRSTXY")
@@ -223,7 +224,7 @@ func RandStringRunes(n int) string {
 }
 ```
 
-### Handle full space character
+#### Handle full space character
 
 使用`rune`可以處理更多的 UTF-8 字元，包含中文字、emoji 等全形字。
 
@@ -267,7 +268,7 @@ func validateComment(comment string) string {
 // sensitive package: https://github.com/importcjj/sensitive
 ```
 
-# Reference
+## Reference
 
 - https://pkg.go.dev/builtin
 - https://go101.org/article/string.html

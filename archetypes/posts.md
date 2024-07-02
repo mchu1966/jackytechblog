@@ -4,9 +4,10 @@ date = {{ .Date }}
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 description = "" 
 slug = "" 
-authors = [] 
+authors = ["Jacky Cheng"]
 tags = [] 
 categories = [] 
 externalLink = "" 
 series = [] 
+havetoc = false
 +++
